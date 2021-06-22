@@ -1,4 +1,3 @@
-//jshint esversion:6
 require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -16,9 +15,6 @@ app.use(
 );
 app.use(express.static("public"));
 
-// mongoose.connect("mongodb+srv://Admin-Abhijeet:Test-123@cluster0.u1idj.mongodb.net/todolistDB", {
-//   useNewUrlParser: true
-// });
 mongoose.connect(
   `mongodb+srv://Admin-${process.env.DB_OWNER}:${process.env.DB_PASSWORD}@cluster0.u1idj.mongodb.net/todolistDB`,
   {
